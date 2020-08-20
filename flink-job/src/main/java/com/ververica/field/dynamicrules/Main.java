@@ -26,9 +26,14 @@ import com.ververica.field.config.Config;
 import com.ververica.field.config.Parameters;
 import org.apache.flink.api.java.utils.ParameterTool;
 
+import java.util.stream.Stream;
+
 public class Main {
 
   public static void main(String[] args) throws Exception {
+    System.out.println("==========> ARGS: ");
+    Stream.of(args).forEach(arg -> System.out.println("--- " + arg));
+
     ParameterTool tool = ParameterTool.fromArgs(args);
     Parameters inputParams = new Parameters(tool);
     Config config = new Config(inputParams, STRING_PARAMS, INT_PARAMS, BOOL_PARAMS);

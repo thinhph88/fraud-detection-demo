@@ -42,6 +42,7 @@ public class Config {
     overrideDefaults(inputParams, stringParams);
     overrideDefaults(inputParams, intParams);
     overrideDefaults(inputParams, boolParams);
+    System.out.println("Config: " + values.toString());
   }
 
   public static Config fromParameters(Parameters parameters) {
